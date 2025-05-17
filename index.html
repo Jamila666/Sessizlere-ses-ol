@@ -1,122 +1,104 @@
-<section id="expanded-info" style="
-  padding: 60px 30px; 
-  background: linear-gradient(135deg, #f9efe7 0%, #e6d6cc 100%);
-  border-radius: 25px; 
-  margin-top: 70px; 
-  max-width: 980px; 
-  margin-left: auto; 
-  margin-right: auto; 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-  color: #4a3b31; 
-  line-height: 1.7;
-  box-shadow: 0 12px 35px rgba(78, 54, 38, 0.3);
-">
-
-  <h2 style="
-    text-align:center; 
-    color:#7a563f; 
-    margin-bottom: 45px; 
-    font-size: 2.8rem;
+<style>
+  /* Фон с полупрозрачными иконками животных */
+  .emotional-section {
+    background: linear-gradient(135deg, #d9e6f2, #e9d9f2);
+    position: relative;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #3a3a3a;
+  }
+  .emotional-section::before {
+    content: "🐾 🐱 🐶 🦜 🐢 🐭";
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.15);
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: 40px;
+  }
+  .emotional-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .emotional-title {
+    font-size: 2.8em;
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(122, 86, 63, 0.7);
-  ">Обращение к каждому доброму сердцу</h2>
-  
-  <p style="
-    font-size: 1.4rem; 
-    margin-bottom: 30px; 
-    max-width: 880px; 
-    margin-left: auto; 
-    margin-right: auto;
-    font-weight: 500;
-  ">
-    Меня зовут <strong>Джамиля</strong>, и я обращаюсь к тебе с глубокой верой в силу человеческой доброты. Ты — свет в темноте для тех, кто замерзает и страдает в тишине улиц. Ты — надежда для тех, кто слишком слаб, чтобы попросить о помощи. Вместе мы можем построить <em>приют, где каждый найдет любовь, заботу и защиту</em>, независимо от породы или состояния здоровья.
-  </p>
-
-  <p style="
-    font-size: 1.3rem; 
-    margin-bottom: 45px; 
-    max-width: 880px; 
-    margin-left: auto; 
-    margin-right: auto;
-    font-style: italic;
-    color: #6d4f3f;
-  ">
-    Представь холодную ночь, когда бездомное животное дрожит от страха и одиночества. Представь боль и несправедливость, которую мы можем остановить вместе. Твоя поддержка — это не просто помощь, это спасение жизни.
-  </p>
-
-  <h3 style="
-    color:#8a6342; 
-    margin-bottom: 40px; 
-    font-size: 2rem; 
-    font-weight: 600;
+    margin-bottom: 20px;
+    color: #5a2a72;
+  }
+  .emotional-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .emotional-text strong {
+    color: #8b2c6e;
+  }
+  /* Мозаика из фотографий */
+  .photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  .photo-mosaic img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(91, 62, 91, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .photo-mosaic img:hover {
+    transform: scale(1.05);
+  }
+  /* Контактная информация */
+  .contact-info {
+    font-size: 1em;
     text-align: center;
+    color: #5a2a72;
+  }
+  .contact-info a {
+    color: #a13a8a;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-info a:hover {
     text-decoration: underline;
-  ">Истории, которые нельзя забывать</h3>
+  }
+</style>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 35px; justify-content: center; margin-bottom: 65px;">
-    <div style="flex: 1 1 320px; background: #fff4ea; padding: 28px; border-radius: 18px; box-shadow: 0 6px 15px rgba(120, 89, 51, 0.15);">
-      <strong style="font-size: 1.25rem; color: #7c4f28;">Белла — кошка, которая боялась доверять</strong>
-      <p style="margin-top: 18px; font-size: 1.15rem; color: #5a3d23;">
-        Белла долгое время пряталась от людей, потому что испытала боль и предательство. Но благодаря вниманию волонтёров она впервые ощутила любовь и вновь поверила в светлое будущее.
-      </p>
+<section class="emotional-section">
+  <div class="emotional-content">
+    <h2 class="emotional-title">Джамиля просит: Помогите достучаться до сердец</h2>
+    <p class="emotional-text">
+      Каждый день <strong>тысячи беззащитных животных</strong> страдают от холода, одиночества и жестокости.  
+      <em>Пожалуйста, прислушайтесь к их тихим голосам — они нуждаются в вашей помощи.</em>  
+      Наш призыв — <strong>создать приют, где каждый зверёк будет защищён</strong>, получит заботу и любовь, независимо от породы и возраста.
+    </p>
+    <div class="photo-mosaic">
+      <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=500&q=60" alt="Грустный котёнок на улице" />
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=500&q=60" alt="Собака в приюте" />
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=60" alt="Птица в клетке" />
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500&q=60" alt="Заботливый человек с котом" />
+      <img src="https://images.unsplash.com/photo-1537151676768-49e7c16e0d25?auto=format&fit=crop&w=500&q=60" alt="Щенок на снегу" />
+      <img src="https://images.unsplash.com/photo-1517816428104-36e71f8507c0?auto=format&fit=crop&w=500&q=60" alt="Черепаха в природных условиях" />
     </div>
-    <div style="flex: 1 1 320px; background: #fff4ea; padding: 28px; border-radius: 18px; box-shadow: 0 6px 15px rgba(120, 89, 51, 0.15);">
-      <strong style="font-size: 1.25rem; color: #7c4f28;">Тоби — щенок, который победил боль</strong>
-      <p style="margin-top: 18px; font-size: 1.15rem; color: #5a3d23;">
-        Тоби был ранен и почти потерял надежду, но ветеринары и волонтёры дали ему шанс на новую жизнь, полную заботы и тепла. Его путь — пример того, что мы можем изменить судьбы.
-      </p>
-    </div>
-    <div style="flex: 1 1 320px; background: #fff4ea; padding: 28px; border-radius: 18px; box-shadow: 0 6px 15px rgba(120, 89, 51, 0.15);">
-      <strong style="font-size: 1.25rem; color: #7c4f28;">Луна — храбрая кошка-инвалид</strong>
-      <p style="margin-top: 18px; font-size: 1.15rem; color: #5a3d23;">
-        Луна лишилась возможности ходить, но не потеряла силы духа. Благодаря специальной коляске и любви волонтёров она вновь улыбается жизни.
-      </p>
-    </div>
-    <div style="flex: 1 1 320px; background: #fff4ea; padding: 28px; border-radius: 18px; box-shadow: 0 6px 15px rgba(120, 89, 51, 0.15);">
-      <strong style="font-size: 1.25rem; color: #7c4f28;">Макс — старый пёс, которому дали последний шанс</strong>
-      <p style="margin-top: 18px; font-size: 1.15rem; color: #5a3d23;">
-        После многих лет одиночества на улице Макс обрел приют и семью, которые подарили ему любовь и спокойствие на закате жизни.
-      </p>
-    </div>
-    <div style="flex: 1 1 320px; background: #fff4ea; padding: 28px; border-radius: 18px; box-shadow: 0 6px 15px rgba(120, 89, 51, 0.15);">
-      <strong style="font-size: 1.25rem; color: #7c4f28;">Птица Лира — символ надежды</strong>
-      <p style="margin-top: 18px; font-size: 1.15rem; color: #5a3d23;">
-        Маленькая Лира с поврежденным крылом восстанавливается и скоро вновь сможет летать — благодаря заботе и вниманию неравнодушных людей.
-      </p>
-    </div>
+    <p class="emotional-text">
+      <strong>Истории, которые меняют жизни:</strong><br/>
+      — Котёнок Мишка был найден на холодной улице с переломанной лапой, но теперь он улыбается в нашем приюте.<br/>
+      — Собака Лола прошла через боль и страх, но она снова верит в доброту людей.<br/>
+      <em>Ты тоже можешь стать частью этой перемены — подпиши нашу петицию и помоги им обрести дом!</em>
+    </p>
+    <p class="contact-info">
+      Связаться с Джамилей: <br/>
+      Телефон: <strong>099-825-25-50</strong><br/>
+      Instagram: <a href="https://instagram.com/helpinganimals.az" target="_blank">@helpinganimals.az</a>
+    </p>
   </div>
-
-  <h3 style="
-    color:#8a6342; 
-    margin-bottom: 40px; 
-    font-size: 2rem; 
-    font-weight: 600;
-    text-align: center;
-    text-decoration: underline;
-  ">Жуткая правда в цифрах</h3>
-  <ul style="font-size: 1.3rem; margin-bottom: 70px; padding-left: 30px; color:#6a4f38; max-width: 850px; margin-left: auto; margin-right: auto; list-style-type: disc;">
-    <li>Более <strong>10 000</strong> бездомных животных ежегодно погибают от холода, голода и жестокости в нашей стране.</li>
-    <li>Каждый день более <strong>30</strong> животных становятся инвалидами из-за травм и отсутствия помощи.</li>
-    <li>Только <strong>15%</strong> из пострадавших получают шанс на спасение и лечение.</li>
-    <li>Оставшиеся страдают в тишине, подвергаясь одиночеству и боли.</li>
-    <li>Приюты и волонтеры работают на износ, нуждаясь в финансовой и моральной поддержке.</li>
-    <li>Суровые законы против живодёрства практически отсутствуют, а жестокость остаётся безнаказанной.</li>
-  </ul>
-
-  <h3 style="color:#8a6342; margin-bottom: 40px; font-size: 2rem; font-weight: 600; text-align:center; text-decoration: underline;">Фотогалерея — жизни и надежды</h3>
-  <div style="
-    display: grid; 
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); 
-    gap: 20px; 
-    border-radius: 16px; 
-    overflow: hidden; 
-    margin-bottom: 70px;
-  ">
-    <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=400&q=80" alt="Кошка на улице" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.9) saturate(1.1); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=400&q=80" alt="Щенок в приюте" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.92) saturate(1.2); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80" alt="Птица в клетке" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.9) saturate(1.1); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Кошка дома" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.95) saturate(1.1); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1546182990-9f029af9c5b0?auto=format&fit=crop&w=400&q=80" alt="Собака на улице зимой" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.85) saturate(1.05); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=400&q=80" alt="Щенок в коробке" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.9) saturate(1.15); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=400&q=80" alt="Кошка смотрит в окно" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.93) saturate(1.1); box-shadow: 0 6px 12px rgba(122, 86, 63, 0.3);">
-    <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=400&q=80" alt="Собака в приюте" style="width:100%; height:auto; border-radius: 14px; object-fit: cover; filter: brightness(0.9) saturate(1.2); box-shadow:
+</section>
