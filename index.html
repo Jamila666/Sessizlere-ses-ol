@@ -1,0 +1,123 @@
+from zipfile import ZipFile
+from pathlib import Path
+
+# HTML content from the earlier step
+html_content = """<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Səssizlərə Səs Ol | Voice for the Voiceless</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0092bc;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header img {
+      height: 50px;
+      vertical-align: middle;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      text-shadow: 1px 1px 4px #000;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #006494;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .contact {
+      margin-top: 2rem;
+      background: #f0f0f0;
+      padding: 1rem;
+      border-left: 4px solid #0092bc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Azerbaijan.svg/2560px-Flag_of_Azerbaijan.svg.png" alt="Flag" height="40">
+    <h1>Səssizlərə Səs Ol / Voice for the Voiceless</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Məhəbbət, qoruq, qanun</h2>
+    <p>Let’s protect those who cannot speak for themselves.</p>
+  </section>
+
+  <section class="content">
+    <h2>Haqqında / About</h2>
+    <p>Bu sayt, Azərbaycanda heyvanlara qarşı insanlıqdan uzaq rəftarlara son qoyulması, onların qorunması üçün dövlət sığınacağının yaradılması təklifi əsasında yaradılıb. Biz mərhəmət, cavabdehlik və qanunlarla heyvanlara dəstək olmaq istəyirik.</p>
+
+    <h2>Petisiya Məktubu / Petition Letter</h2>
+    <p>Buraya prezidentə yönəlmiş tam məktubun mətnini yazırıq...</p>
+
+    <h2>Qalereya / Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4a07c" alt="Cute cat">
+      <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006" alt="Sad dog">
+      <img src="https://images.unsplash.com/photo-1618828660525-f62f4d381e38" alt="Puppy">
+      <img src="https://images.unsplash.com/photo-1504203705543-6a4b3b0ec0da" alt="Kitten">
+    </div>
+
+    <div class="contact">
+      <h3>Əlaqə / Contact</h3>
+      <p><strong>Ad:</strong> Cəmilə</p>
+      <p><strong>Telefon:</strong> 099-825-25-50</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/helpinganimals.az">@helpinganimals.az</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Səssizlərə Səs Ol. Created with love and care.</p>
+  </footer>
+</body>
+</html>
+"""
+
+# Save the HTML to a file
+html_path = Path("/mnt/data/index.html")
+html_path.write_text(html_content, encoding='utf-8')
+
+# Create a zip file with the HTML
+zip_path = Path("/mnt/data/sessizlere-ses-ol.zip")
+with ZipFile(zip_path, 'w') as zipf:
+    zipf.write(html_path, arcname="index.html")
+
+zip_path.name  # Return name for download link
