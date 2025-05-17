@@ -1,104 +1,139 @@
 <style>
-  /* Фон с полупрозрачными иконками животных */
+  /* Основной фон с милыми животными-смайликами */
   .emotional-section {
-    background: linear-gradient(135deg, #d9e6f2, #e9d9f2);
+    background: linear-gradient(135deg, #dce6f1, #f0d9f3);
     position: relative;
-    padding: 40px 20px;
+    padding: 50px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #3a3a3a;
+    color: #3b2f45;
+    overflow: hidden;
   }
   .emotional-section::before {
-    content: "🐾 🐱 🐶 🦜 🐢 🐭";
-    font-size: 120px;
-    color: rgba(255, 255, 255, 0.15);
+    content: "🐾 🐱 🐶 🦜 🐢 🐭 🐰 🦊 🦝 🐻";
+    font-size: 130px;
+    color: rgba(255, 255, 255, 0.1);
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotate(-10deg);
     user-select: none;
     pointer-events: none;
     letter-spacing: 40px;
+    z-index: 0;
   }
   .emotional-content {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     z-index: 1;
   }
   .emotional-title {
-    font-size: 2.8em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #5a2a72;
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #5d3a70;
+    text-align: center;
   }
   .emotional-text {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    font-size: 1.25em;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    text-align: justify;
+    text-indent: 2em;
   }
   .emotional-text strong {
-    color: #8b2c6e;
+    color: #8e3b97;
+    font-weight: 700;
   }
-  /* Мозаика из фотографий */
+  .emotional-text em {
+    color: #6c4a87;
+    font-style: italic;
+  }
+  /* Мозаика из фотографий с разной высотой для живости */
   .photo-mosaic {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
+    grid-auto-rows: 180px;
+    gap: 18px;
+    margin-bottom: 40px;
   }
   .photo-mosaic img {
     width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(91, 62, 91, 0.2);
+    height: 100%;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(110, 63, 130, 0.25);
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  .photo-mosaic img:hover {
-    transform: scale(1.05);
+  /* Для мозаики — рандомная высота чтобы не было ровной сетки */
+  .photo-mosaic img:nth-child(3n+1) {
+    grid-row: span 2;
   }
-  /* Контактная информация */
+  .photo-mosaic img:hover {
+    transform: scale(1.07);
+  }
+  /* Истории с акцентами и отступами */
+  .story {
+    margin-bottom: 28px;
+    font-size: 1.15em;
+    line-height: 1.7;
+    border-left: 4px solid #a85dd3;
+    padding-left: 18px;
+    color: #4a2c5e;
+  }
+  .story strong {
+    color: #7b3db3;
+  }
+  /* Контакты */
   .contact-info {
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: center;
-    color: #5a2a72;
+    color: #5d3a70;
   }
   .contact-info a {
-    color: #a13a8a;
+    color: #a04cd8;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
   }
   .contact-info a:hover {
     text-decoration: underline;
   }
 </style>
 
-<section class="emotional-section">
+<section class="emotional-section" aria-label="Обращение и истории о помощи животным">
   <div class="emotional-content">
-    <h2 class="emotional-title">Джамиля просит: Помогите достучаться до сердец</h2>
+    <h2 class="emotional-title">Джамиля просит помочь животным — вместе мы можем изменить их судьбы</h2>
     <p class="emotional-text">
-      Каждый день <strong>тысячи беззащитных животных</strong> страдают от холода, одиночества и жестокости.  
-      <em>Пожалуйста, прислушайтесь к их тихим голосам — они нуждаются в вашей помощи.</em>  
-      Наш призыв — <strong>создать приют, где каждый зверёк будет защищён</strong>, получит заботу и любовь, независимо от породы и возраста.
+      Каждый день <strong>тысячи беззащитных животных</strong> в Азербайджане сталкиваются с <em>холодом, голодом, одиночеством и жестокостью</em>.  
+      <strong>Пожалуйста, не оставайтесь равнодушными.</strong> Это не просто истории — это судьбы, наполненные болью и надеждой.  
+      Мы призываем всех объединиться, чтобы <strong>создать приют, где каждый питомец будет защищён и любим</strong>, независимо от породы, возраста или внешности.
     </p>
-    <div class="photo-mosaic">
-      <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=500&q=60" alt="Грустный котёнок на улице" />
-      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=500&q=60" alt="Собака в приюте" />
-      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=60" alt="Птица в клетке" />
-      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500&q=60" alt="Заботливый человек с котом" />
-      <img src="https://images.unsplash.com/photo-1537151676768-49e7c16e0d25?auto=format&fit=crop&w=500&q=60" alt="Щенок на снегу" />
-      <img src="https://images.unsplash.com/photo-1517816428104-36e71f8507c0?auto=format&fit=crop&w=500&q=60" alt="Черепаха в природных условиях" />
+    <div class="photo-mosaic" aria-label="Фотографии животных из приюта и на улице">
+      <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=600&q=70" alt="Грустный котёнок на улице" />
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=70" alt="Собака в приюте" />
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=70" alt="Птица в клетке" />
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=70" alt="Заботливый человек с котом" />
+      <img src="https://images.unsplash.com/photo-1537151676768-49e7c16e0d25?auto=format&fit=crop&w=600&q=70" alt="Щенок на снегу" />
+      <img src="https://images.unsplash.com/photo-1517816428104-36e71f8507c0?auto=format&fit=crop&w=600&q=70" alt="Черепаха в природных условиях" />
+      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=70" alt="Кошка смотрит в окно" />
+      <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=70" alt="Собака на улице зимой" />
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=70" alt="Птица в природе" />
     </div>
-    <p class="emotional-text">
-      <strong>Истории, которые меняют жизни:</strong><br/>
-      — Котёнок Мишка был найден на холодной улице с переломанной лапой, но теперь он улыбается в нашем приюте.<br/>
-      — Собака Лола прошла через боль и страх, но она снова верит в доброту людей.<br/>
-      <em>Ты тоже можешь стать частью этой перемены — подпиши нашу петицию и помоги им обрести дом!</em>
+
+    <div class="story"><strong>История Мишки:</strong> Малыш был найден на улице, сильно замёрзший и с переломанной лапой. Сегодня Мишка — счастливый кот в нашем приюте, он улыбается и играет, потому что получил любовь и заботу.</div>
+    <div class="story"><strong>История Лолы:</strong> Эта собака прошла через ужасные испытания, но теперь она снова верит в добро. Она — символ надежды для всех заброшенных животных.</div>
+    <div class="story"><strong>Статистика, которую нельзя игнорировать:</strong> В нашей стране ежедневно погибает около <strong>50 животных</strong> из-за жестокого обращения, холода и голода. Более <strong>70%</strong> бездомных питомцев нуждаются в медицинской помощи и уходе.</div>
+    <div class="story"><strong>Что мы предлагаем:</strong> Создание приюта, где <em>каждое животное будет защищено, получит лечение и любовь</em>. Строгие проверки новых хозяев и камеры видеонаблюдения 24/7 — чтобы ни одно животное не осталось без присмотра.</div>
+
+    <p class="emotional-text" style="text-align:center; font-size:1.3em; font-weight:700; margin-top:40px;">
+      <em>Твоя поддержка — это их надежда на жизнь.</em><br/>
+      <strong>Подпиши петицию и помоги сделать мир лучше для наших меньших братьев.</strong>
     </p>
+
     <p class="contact-info">
       Связаться с Джамилей: <br/>
       Телефон: <strong>099-825-25-50</strong><br/>
-      Instagram: <a href="https://instagram.com/helpinganimals.az" target="_blank">@helpinganimals.az</a>
+      Instagram: <a href="https://instagram.com/helpinganimals.az" target="_blank" rel="noopener noreferrer">@helpinganimals.az</a>
     </p>
   </div>
 </section>
